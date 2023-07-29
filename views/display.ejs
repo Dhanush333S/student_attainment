@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        border: 0px;
+        margin: 0px;
+      }
+      nav {
+        display: flex;
+        background-color: gray;
+        position: -webkit-sticky;
+        position: sticky;
+        overflow: hidden;
+        top: 0;
+      }
+      .rvlogo {
+        height: 40px;
+        margin-left: 10px;
+        padding: 3px;
+      }
+      .back a,
+      .logout a {
+        text-decoration: none;
+        color: rgba(40, 69, 88, 0.943);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 3px;
+      }
+      .back,
+      .logout {
+        border-radius: 5px;
+        background: whitesmoke;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .heading {
+        background-color: rgb(0, 162, 255);
+        font-size: 30px;
+        text-decoration: underline;
+        padding: 5px;
+        margin: 18px;
+        width: 930px;
+        color: white;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: "Lucida Sans";
+      }
+      td {
+        width: 500px;
+      }
+      thead {
+        font-size: 30px;
+      }
+      thead th:first-child {
+        width: 290px;
+      }
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      td {
+        font-size: 20px;
+        padding: 5px;
+        text-align: center;
+      }
+      tbody tr:nth-child(odd) {
+        background-color: #dddddd;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img class="rvlogo" src="/rvlogo.png" alt="" />
+      <div class="back"><a href="/index">BACK</a></div>
+      <div class="logout"><a href="/logout">LOGOUT</a></div>
+    </nav>
+    <center>
+      <div class="heading">Threshold</div>
+
+      <div>
+        <table>
+          <thead>
+            <tr>
+              <th>USN</th>
+              <th>CO1</th>
+              <th>CO2</th>
+              <th>CO3</th>
+              <th>CO4</th>
+              <th>CO5</th>
+              <th>CO6</th>
+            </tr>
+          </thead>
+          <tbody>
+            <%for(var row of student){%>
+            <tr>
+              <td><%=row.usn%></td>
+              <td><%=row.co1%></td>
+              <td><%=row.co2%></td>
+              <td><%=row.co3%></td>
+              <td><%=row.co4%></td>
+              <td><%=row.co5%></td>
+              <td><%=row.co6%></td>
+            </tr>
+            <% }%>
+          </tbody>
+        </table>
+      </div>
+    </center>
+  </body>
+</html>

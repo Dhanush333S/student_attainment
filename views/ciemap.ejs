@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{
+            display: flex;
+            background-color: gray;
+        }
+        .rvlogo{
+            height: 40px;
+            margin-left: 10px;
+            padding: 3px;
+        }
+        .back a,.logout a{
+            text-decoration: none;
+            color: rgba(40, 69, 88, 0.943);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 3px;
+        }
+        .back,.logout{
+            border-radius: 5px;
+            background: whitesmoke;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        select{
+            font-size: 150%;
+            text-align: center;
+            padding: 10px;
+            margin: 15px;
+            width:320px ;
+            background-color: rgba(97, 89, 89, 0.379);
+        }
+        div{
+            margin-bottom: 10px;
+        }
+        table{
+            width: 70%;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th{
+            font-size: 20px;
+        }
+        th,td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .test{
+            font-size: 30px;
+        }
+        tbody tr:nth-child(even){
+            background-color: rgb(228, 136, 136);
+        }
+        input{
+            background-color: rgb(199, 223, 223);
+        }
+        .submit{
+            margin-top: 10px;
+        }
+        button{
+            font-size: 30px;
+            width: 200px;
+            background-color: rgb(228, 136, 136);
+        }
+        button:hover{
+            background-color: aliceblue;
+            color:  rgb(228, 136, 136);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="rvlogo" src="/rvlogo-dark.png" alt="">
+            <div class="back"><a href="<%=back%>">BACK</a></div>
+            <div class="logout"><a href="/logout">LOGOUT</a></div>
+        </nav>
+    </header>
+    <form action="/ciemap" method="post">
+        <div align="center">
+            <select name="test" id="">
+                <option value="test1">TEST 1</option>
+                <option value="test2">TEST 2</option>
+                <option value="test3">TEST 3</option>
+            </select>
+        </div>
+        </div>
+        <table align="center">
+            <thead>
+                <tr>
+                    <th colspan="3" class="test">TEST</th>
+                </tr>
+                <tr>
+                    <th>Q.No</th>
+                    <th>CO Mapping</th>
+                    <th>Maximum Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Q1a</td>
+                    <td><input type="text" value="0" name="q1a" onclick="this.value=''"></td>
+                    <td><input type="text" value="0" name="mq1a" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q1b</td>
+                    <td><input type="text" value="0" name="q1b" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq1b" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q1c</td>
+                    <td><input type="text" value="0" name="q1c" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq1c" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q2a</td>
+                    <td><input type="text" value="0" name="q2a" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq2a" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q2b</td>
+                    <td><input type="text" value="0" name="q2b" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq2b" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q2c</td>
+                    <td><input type="text" value="0" name="q2c" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq2c" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q3a</td>
+                    <td><input type="text" value="0" name="q3a" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq3a" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q3b</td>
+                    <td><input type="text" value="0" name="q3b" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq3b" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q3c</td>
+                    <td><input type="text" value="0" name="q3c" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq3c" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q4a</td>
+                    <td><input type="text" value="0" name="q4a" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq4a" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q4b</td>
+                    <td><input type="text" value="0" name="q4b" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq4b" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q4c</td>
+                    <td><input type="text" value="0" name="q4c" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq4c" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q5a</td>
+                    <td><input type="text" value="0" name="q5a" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq5a" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q5b</td>
+                    <td><input type="text" value="0" name="q5b" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq5b" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q5c</td>
+                    <td><input type="text" value="0" name="q5c" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq5c" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q6a</td>
+                    <td><input type="text" value="0" name="q6a" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq6a" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q6b</td>
+                    <td><input type="text" value="0" name="q6b" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq6b" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q6c</td>
+                    <td><input type="text" value="0" name="q6c" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq6c" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div align="center" class="submit">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>

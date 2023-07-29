@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         html{
+            scroll-behavior: smooth;
+        }
+        .up{
+            position: fixed;
+            background-color: aquamarine;
+            bottom: 16px;
+            right: 32px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #1f1f1f;
+            transition: all 0.5s;
+            font-size: 300%;
+            opacity: 0.6;
+            padding-top: 10px;
+        }
+        nav{
+            display: flex;
+            background-color: gray;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+        .rvlogo{
+            height: 40px;
+            margin-left: 10px;
+            padding: 3px;
+        }
+        .back a,.logout a{
+            text-decoration: none;
+            color: rgba(40, 69, 88, 0.943);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 3px;
+        }
+        .back,.logout{
+            border-radius: 5px;
+            background: whitesmoke;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        select{
+            font-size: 150%;
+            text-align: center;
+            padding: 10px;
+            margin: 15px;
+            width:320px ;
+            background-color: rgba(97, 89, 89, 0.379);
+        }
+        div{
+            margin-bottom: 10px;
+        }
+        table{
+            width: 70%;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th{
+            font-size: 20px;
+        }
+        th,td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .test{
+            font-size: 30px;
+        }
+        tbody tr:nth-child(even){
+            background-color: rgb(228, 136, 136);
+        }
+        td{
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#heading" class="up">
+        <i>^</i>
+    </a>
+        <nav>
+            <img class="rvlogo" src="/rvlogo-dark.png" alt="">
+            <div class="back"><a href="<%=back%>">BACK</a></div>
+            <div class="logout"><a href="/logout">LOGOUT</a></div>
+        </nav>
+        <form action="/viewquiz" method="post">
+        <div align="center">
+            <select name="quiz" id="">
+                <option value="quiz1">QUIZ 1</option>
+                <option value="quiz2">QUIZ 2</option>
+                <option value="quiz3">QUIZ 3</option>
+            </select>
+
+            <select name="version" id="">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
+            <button type="submit"  id="heading">Search</button>
+        </div>
+        </form>
+        <table align="center">
+            <thead>
+                <tr>
+                    <th colspan="3" class="test"><%=title%></th>
+                </tr>
+                <tr>
+                    <th>Q.No</th>
+                    <th>CO Mapping</th>
+                    <th>Maximum Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Q1</td>
+                    <td><%=dict[0].q1%></td>
+                    <td><%=dict[0].mq1%></td>
+                </tr>
+                <tr>
+                    <td>Q2</td>
+                    <td><%=dict[0].q2%></td>
+                    <td><%=dict[0].mq2%></td>
+                </tr>
+                    <td>Q3</td>
+                    <td><%=dict[0].q3%></td>
+                    <td><%=dict[0].mq3%></td>
+                </tr>
+                <tr>
+                    <td>Q4</td>
+                    <td><%=dict[0].q4%></td>
+                    <td><%=dict[0].mq4%></td>
+                </tr>
+                <tr>
+                    <td>Q5</td>
+                    <td><%=dict[0].q5%></td>
+                    <td><%=dict[0].mq5%></td>
+                </tr>
+                <tr>
+                    <td>Q6</td>
+                    <td><%=dict[0].q6%></td>
+                    <td><%=dict[0].mq6%></td>
+                </tr>
+                <tr>
+                    <td>Q7</td>
+                    <td><%=dict[0].q7%></td>
+                    <td><%=dict[0].mq7%></td>
+                </tr>
+                <tr>
+                    <td>Q8</td>
+                    <td><%=dict[0].q8%></td>
+                    <td><%=dict[0].mq8%></td>
+                </tr>
+                <tr>
+                    <td>Q9</td>
+                    <td><%=dict[0].q9%></td>
+                    <td><%=dict[0].mq9%></td>
+                </tr>
+                <tr>
+                    <td>Q10</td>
+                    <td><%=dict[0].q10%></td>
+                    <td><%=dict[0].mq10%></td>
+                </tr>
+                <tr>
+                    <td>Q11</td>
+                    <td><%=dict[0].q11%></td>
+                    <td><%=dict[0].mq11%></td>
+                </tr>
+                <tr>
+                    <td>Q12</td>
+                    <td><%=dict[0].q12%></td>
+                    <td><%=dict[0].mq12%></td>
+                </tr>
+                <tr>
+                    <td>Q13</td>
+                    <td><%=dict[0].q13%></td>
+                    <td><%=dict[0].mq13%></td>
+                </tr>
+                <tr>
+                    <td>Q14</td>
+                    <td><%=dict[0].q14%></td>
+                    <td><%=dict[0].mq14%></td>
+                </tr>
+                <tr>
+                    <td>Q15</td>
+                    <td><%=dict[0].q15%></td>
+                    <td><%=dict[0].mq15%></td>
+                </tr>
+            </tbody>
+        </table>
+</body>
+</html>

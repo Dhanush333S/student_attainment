@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{
+            display: flex;
+            background-color: gray;
+        }
+        .rvlogo{
+            height: 40px;
+            margin-left: 10px;
+            padding: 3px;
+        }
+        .back a,.logout a{
+            text-decoration: none;
+            color: rgba(40, 69, 88, 0.943);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 3px;
+        }
+        .back,.logout{
+            border-radius: 5px;
+            background: whitesmoke;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        select{
+            font-size: 150%;
+            text-align: center;
+            padding: 10px;
+            margin: 15px;
+            width:320px ;
+            background-color: rgba(97, 89, 89, 0.379);
+        }
+        div{
+            margin-bottom: 10px;
+        }
+        table{
+            width: 70%;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th{
+            font-size: 20px;
+        }
+        th,td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .test{
+            font-size: 30px;
+        }
+        tbody tr:nth-child(even){
+            background-color: rgb(228, 136, 136);
+        }
+        input{
+            background-color: rgb(199, 223, 223);
+        }
+        .submit{
+            margin-top: 10px;
+        }
+        button{
+            font-size: 30px;
+            width: 200px;
+            background-color: rgb(228, 136, 136);
+        }
+        button:hover{
+            background-color: aliceblue;
+            color:  rgb(228, 136, 136);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="rvlogo" src="/rvlogo-dark.png" alt="">
+            <div class="back"><a href="<%=back%>">BACK</a></div>
+            <div class="logout"><a href="/logout">LOGOUT</a></div>
+        </nav>
+    </header>
+    <form action="/quizmap" method="post">
+        <div align="center">
+            <select name="quiz" id="">
+                <option value="quiz1">QUIZ 1</option>
+                <option value="quiz2">QUIZ 2</option>
+                <option value="quiz3">QUIZ 3</option>
+            </select>
+
+            <select name="version" id="">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select>
+        </div>
+        </div>
+        <table align="center">
+            <thead>
+                <tr>
+                    <th colspan="3" class="test">QUIZ</th>
+                </tr>
+                <tr>
+                    <th>Q.No</th>
+                    <th>CO Mapping</th>
+                    <th>Maximum Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Q1</td>
+                    <td><input type="text" value="0" name="q1" onclick="this.value=''"></td>
+                    <td><input type="text" value="0" name="mq1" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q2</td>
+                    <td><input type="text" value="0" name="q2" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq2" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q3</td>
+                    <td><input type="text" value="0" name="q3" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq3" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q4</td>
+                    <td><input type="text" value="0" name="q4" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq4" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q5</td>
+                    <td><input type="text" value="0" name="q5" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq5" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q6</td>
+                    <td><input type="text" value="0" name="q6" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq6" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q7</td>
+                    <td><input type="text" value="0" name="q7" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq7" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q8</td>
+                    <td><input type="text" value="0" name="q8" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq8" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q9</td>
+                    <td><input type="text" value="0" name="q9" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq9" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q10</td>
+                    <td><input type="text" value="0" name="q10" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq10" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q11</td>
+                    <td><input type="text" value="0" name="q11" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq11" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q12</td>
+                    <td><input type="text" value="0" name="q12" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq12" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q13</td>
+                    <td><input type="text" value="0" name="q13" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq13" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q14</td>
+                    <td><input type="text" value="0" name="q14" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq14" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+                <tr>
+                    <td>Q15</td>
+                    <td><input type="text" value="0" name="q15" onclick="this.value=''" autocomplete="off"></td>
+                    <td><input type="text" value="0" name="mq15" onclick="this.value=''" autocomplete="off"></td>
+                </tr>
+            </tbody>
+        </table>
+        <div align="center" class="submit">
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+</html>

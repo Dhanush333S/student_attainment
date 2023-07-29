@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{
+            display: flex;
+            background-color: gray;
+            margin: 0px 10px 20px 10px;
+        }
+        .rvlogo{
+            height: 40px;
+            margin-left: 10px;
+            padding: 3px;
+        }
+        .back a,.logout a{
+            text-decoration: none;
+            color: rgba(40, 69, 88, 0.943);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 3px;
+        }
+        .back,.logout{
+            border-radius: 5px;
+            background: whitesmoke;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        table{
+            border: 2px solid black;
+            width: 400px;
+            height: 225px;
+            margin: 10px;
+        }
+        #table{
+            display: flex;
+            flex-wrap: wrap;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            margin: 20px;
+        }
+        td{
+            text-align: center;
+        }
+        table input{
+            width: 142px;
+        }
+        tbody tr:nth-child(odd){
+            background-color: rgb(180, 189, 189);
+        }
+        tr td:nth-child(even){
+            width: 300px;
+        }
+        .head{
+            padding-left: 84px;
+        }
+        #finish{
+            display: flex;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 32px;
+            height: 40px;
+            width: 275px;
+            background-color:rgba(179, 168, 168, 0.528) ;
+            
+        }
+        #finish:hover{
+            background-color: rgb(179, 168, 168);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="rvlogo" src="/rvlogo.png" alt="">
+            <div class="back"><a href="/asgnstudent">BACK</a></div>
+            <div class="logout"><a href="/logout">LOGOUT</a></div>
+        </nav>
+    </header>
+    <div class="heading">
+        <center>
+            <form action="/asgneach" method="post">
+                <label for="phase"><b>Number of Phases </b></label>
+                <input type="text" name="phase" id="phase" maxlength="1" onclick="this.value=''" onkeyup="this.value = this.value.replace(/[^1-4]/,'')">
+                <button type="submit">submit</button>
+            </form>
+        </center>
+    </div>
+    <form action="/asgneach/upload" method="post">
+        <div id="table">
+        <%for(var i=0;i<n;i++){%> 
+            <table>
+                <thead>
+                    <tr>
+                        <th class="head" colspan="2">Phase <%=(i+1)%></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>R1</td>
+                        <td><input type="text" autocomplete="off" name="m1<%=i+1%>" value="0" onclick="this.value=''" onkeyup="this.value = this.value.replace(/[^0-9]/,'')"></td>
+                    </tr>
+                    <tr>
+                        <td>R2</td>
+                        <td><input type="text" autocomplete="off" name="m2<%=i+1%>" value="0" onclick="this.value=''" onkeyup="this.value = this.value.replace(/[^0-9]/,'')"></td>
+                    </tr>
+                    <tr>
+                        <td>R3</td>
+                        <td><input type="text" autocomplete="off" name="m3<%=i+1%>" value="0" onclick="this.value=''" onkeyup="this.value = this.value.replace(/[^0-9]/,'')"></td>
+                    </tr>
+                    <tr>
+                        <td>R4</td>
+                        <td><input type="text" autocomplete="off" name="m4<%=i+1%>" value="0" onclick="this.value=''" onkeyup="this.value = this.value.replace(/[^0-9]/,'')"></td>
+                    </tr>
+                    <tr>
+                        <td>R5</td>
+                        <td><input type="text" autocomplete="off" name="m5<%=i+1%>" value="0" onclick="this.value=''" onkeyup="this.value = this.value.replace(/[^0-9]/,'')"></td>
+                    </tr>
+                    <tr>
+                        <td>R6</td>
+                        <td><input type="text" autocomplete="off" name="m6<%=i+1%>" value="0" onclick="this.value=''" onkeyup="this.value = this.value.replace(/[^0-9]/,'')"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <%}%>
+        </div>
+        <div ><button id="finish" type="submit">Finish</button></div>
+    </form>
+</body>
+</html>

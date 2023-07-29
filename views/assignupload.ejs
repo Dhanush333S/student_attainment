@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            display: flex;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(55, 181, 181);
+        }
+        div{
+            margin-top: 17%;
+            border: 3px dashed rgb(220, 210, 210);
+            padding: 30px;
+            border-radius: 5px;
+            background-color: rgb(224, 180, 123);
+            font-size: 80px;
+            box-shadow:50px 50px;
+        }
+        button{
+            font-size: 30px;
+            width: 121px;
+            height: 45px;
+            background-color: rgb(224, 180, 123);
+            border: 2px dashed rgb(220, 210, 210);
+            border-radius: 5px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <%if(locals.back){%>
+    <button><a href="<%=back%>">Back</a></button>
+    <%} else{%>
+    <button><a href="/index">Back</a></button>
+    <%}%>
+    <div>
+        <b>Successfully uploaded!!!</b>
+    </div>
+</body>
+</html>

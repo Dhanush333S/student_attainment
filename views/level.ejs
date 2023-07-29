@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            border: 0px;
+        }
+        nav{
+            display: flex;
+            background-color: gray;
+        }
+        .rvlogo{
+            height: 40px;
+            margin-left: 10px;
+            padding: 3px;
+        }
+        .back a,.logout a{
+            text-decoration: none;
+            color: rgba(40, 69, 88, 0.943);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 3px;
+        }
+        .back,.logout{
+            border-radius: 5px;
+            background: whitesmoke;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        body{
+            background-color: rgb(36, 184, 200);
+        }
+        #heading{
+            color: whitesmoke;
+            font-size: 40px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 80px 0px 80px 0px;
+        }
+        .container{
+            border: 1px solid black;
+            width: 400px;
+            background-color: whitesmoke;
+        }
+        .title{
+            background-color: rgb(222, 202, 24);
+            font-size: 25px;
+            padding: 3px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: whitesmoke;
+        }
+        .intake{
+            display: grid;
+            grid-template-columns: 0.4fr 1fr;
+            font-size: 25px;
+            padding: 10px;
+        }
+        .intake input{
+            margin: 4px;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 227px;
+        }
+        .intake label{
+            margin: 4px;
+            text-align: end;
+        }
+        button{
+            background-color: rgb(229, 211, 46);
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 100px;
+        }
+        button:hover{
+            background-color: rgb(184, 172, 61);
+            color: white;
+            cursor: pointer;
+        }
+        .answer h1{
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        input{
+            border: 1px solid black;
+            border-radius: 6px;
+        }
+        hr{
+            border: 1px solid black;
+            margin: 0px 30px 0px 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="rvlogo" src="/rvlogo-dark.png" alt="">
+            <div class="back"><a href="/index">BACK</a></div>
+            <div class="logout"><a href="/logout">LOGOUT</a></div>
+        </nav>
+    </header>
+    <center>
+        <form action="<%=link%>" method="post">
+                <div id="heading">
+                    Check the Level Here
+                </div>
+                <div class="container">
+                <div class="title">Level</div>
+                <div class="note">*Note: Level: 3>2>1</div>
+                <div class="intake">
+                    <label for="label1">Level 1 :</label><input id="label1" name="level1" type="text" required autocomplete="off">
+                    <label for="label2">Level 2 :</label><input id="label2" name="level2" type="text" required autocomplete="off">
+                    <label for="label3">Level 3 :</label><input id="label3" name="level3" type="text" required autocomplete="off">   
+                </div>
+                <div>
+                    <button type="submit">Upload</button>
+                </div>
+                <%if(locals.answer){%>
+                <div class="answer">
+                    <hr>
+                    <h1>Level is : <%=answer%></h1>
+                </div>
+                <%}%>
+            </div>
+        </form>
+    </center>    
+</body>
+</html>

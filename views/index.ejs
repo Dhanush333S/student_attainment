@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0px;
+      padding: 0px;
+    }
+    .background {
+      background-image: linear-gradient(
+        to right bottom,
+        #9a9ae1,
+        #8aa7ec,
+        #79b3f4,
+        #69bff8,
+        #52cffe
+      );
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -2;
+    }
+    nav {
+      background-image: linear-gradient(to top, #d5d4e7, #abc4ff);
+      display: flex;
+      position: relative;
+      box-shadow: 10px 10px 14px 1px rgb(102 57 57 / 20%);
+    }
+    nav ul {
+      display: flex;
+      margin-left: auto;
+      align-items: flex-end;
+    }
+    img {
+      width: 60px;
+      height: 60px;
+      padding: 2px;
+    }
+    li {
+      list-style: none;
+      padding: 20px;
+    }
+    li:hover {
+      background-image: linear-gradient(to top, #6b65e9, #5951ee, #abc4ff);
+      cursor: pointer;
+    }
+    a {
+      --color: #403faa;
+      color: var(--color);
+      font-size: 20px;
+      text-decoration: none;
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    }
+    li:hover a {
+      --color: white;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin: 100px;
+      margin-top: 40px;
+    }
+    .container button {
+      /* background-image: linear-gradient(to right top,#d2d6d9, #91defb, #cdecf2, #88d5dd, #73d8e2); */
+      background-image: linear-gradient(to right, #20c0ffdd, #6585d6dd);
+      position: relative;
+      width: 300px;
+      height: 100px;
+      color: rgb(29, 28, 28);
+      font-size: 30px;
+      margin: 40px;
+      padding: 20px;
+      text-align: left;
+      /* box-shadow: 20px 20px 50px rgb(0 0 0 / 50%); */
+      /* backdrop-filter: blur(50px); */
+      border: 1px solid white;
+      border-radius: 10px;
+    }
+    .container button {
+      transition: 2s;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .container button::after {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: 130px;
+      height: 184%;
+      background-color: white;
+      opacity: 0.5;
+      transform: skew(32deg);
+      backdrop-filter: blur(50px);
+      width: 26px;
+      transition: 2s;
+    }
+    .container button:hover::after {
+      transform: skew(32deg) translateX(300px);
+    }
+    .container button:hover {
+      transform: scale(1.1);
+    }
+    .contain-button span ul {
+      width: fit-content;
+      text-decoration: none;
+      list-style: none;
+    }
+    .contain-button {
+      position: relative;
+      width: fit-content;
+    }
+    .contain-button span {
+      position: absolute;
+      z-index: 1;      
+      left: 243px;
+      top: 79px;
+      background-color: white;
+      border-radius: 4px;
+      box-shadow: 6px 7px 8px -2px grey;
+      display: none;
+      transition: all 1s;
+      opacity: 1;
+    }
+    .contain-button span li {
+      padding: 10px 30px 10px 30px;
+      text-align: center;
+    }
+    .contain-button span li:hover {
+      background-image: linear-gradient(to right, #858f93dd, #515561dd);
+    }
+    .contain-button span li:hover a {
+      --clr: white;
+    }
+    .contain-button span a {
+      --clr: black;
+      color: var(--clr);
+      font-size: 35px;
+    }
+  </style>
+  <body>
+    <div class="background"></div>
+    <nav>
+      <img src="/rvlogo.png" alt="" />
+      <ul>
+        <li class="link"><a href="/selectsem">Back</a></li>
+        <li class="link"><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="contain-button">
+        <button onclick="dropDown(this)" class="organize">Organize</button>
+        <span class="organize">
+            <ul>
+                <li><a href="/stddetails">Student</a></li><hr>
+                <li><a href="/subdetails">Course</a></li><hr>
+                <li><a href="/grade">Grade</a></li>
+            </ul>
+        </span>
+      </div>
+      <div class="contain-button">
+        <button onclick="dropDown(this)" class="mapping">Mapping</button>
+        <span class="mapping">
+            <ul>
+                <li><a href="/ciemap">CIE</a></li><hr>
+                <li><a href="/quizmap">QUIZ</a></li><hr>
+                <li><a href="/assignment">ASSIGNMENT</a></li>
+            </ul>
+        </span>
+      </div>
+      <div class="contain-button">
+          <button onclick="location.href='/crsendsrvy'" class="crsendsrvy">CourseEndSurvey</button>
+        </div>
+        <div class="contain-button">
+          <button onclick="dropDown(this)" class="veiwing">Viewing</button>
+          <span class="veiwing">
+            <ul>
+              <li><a href="/viewcie">CIE</a></li><hr>
+              <li><a href="/viewquiz">QUIZ</a></li><hr>
+              <li><a href="/viewassign">ASSIGNMENT</a></li>
+          </ul>
+          </span>
+        </div>
+      <div class="contain-button">
+        <button onclick="dropDown(this)" class="upload">Upload</button>
+        <span class="upload">
+            <ul>
+              <li><a href="/assignUpload">ASSIGNMENT</a></li><hr>
+              <li><a href="/lab">LAB</a></li><hr>
+              <li><a href="/cieinput">CIE</a></li><hr>
+              <li><a href="/seegrades">SEE MARKS</a></li><hr>
+                <li><a href="/internalmarks">INTERNAL MARKS</a></li>
+            </ul>
+        </span>
+    </div>
+    <div class="contain-button">
+      <button onclick="location.href='/courseoutcome'" class="courseOutcome">CourseOutcome</button>
+    </div>
+    <div class="contain-button">
+      <button onclick="location.href='/cieseecourseoutcome'" class="SEECourseOutcome">SEECourseOutcome</button>
+    </div>
+      <div class="contain-button">
+        <button onclick="location.href='/directindirect'" class="directindirect">Direct&Indirect</button>
+      </div>
+      <div class="contain-button">
+        <button onclick="dropDown(this)" class="level">Level</button>
+        <span class="level">
+          <ul>
+              <li><a href="/level">Level</a></li><hr>
+              <li><a href="/pocalculation">Program Outcome</a></li><hr>
+              <li><a href="/podisplay">Outcome Display</a></li>
+          </ul>
+      </span>
+      </div>
+    <script>
+        document.addEventListener('click',(e)=>{
+          if(e.target.tagName==='LI'){
+              e.preventDefault();
+              console.log(e.target.getElementsByTagName('a')[0].getAttribute('href'))
+              location.href=e.target.getElementsByTagName('a')[0].getAttribute('href');
+              // e.target.addEventListener('click')
+            }
+        })
+      function dropDown(cls) {
+        let a = document.getElementsByClassName(cls.className)[1];
+        a.style.display = "block";
+        if(cls.className==='level'){
+          a.style.top='inherit'
+        a.style.bottom='-100px';
+        a.style.left='200px';
+      }
+        a.addEventListener("mouseleave", () => {
+          a.style.display = "none";
+        });
+      }
+    </script>
+  </body>
+</html>

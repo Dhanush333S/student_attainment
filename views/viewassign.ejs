@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         html{
+            scroll-behavior: smooth;
+        }
+        nav{
+            display: flex;
+            background-color: gray;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+        .container{
+            display: flex;
+        }
+        .rvlogo{
+            height: 40px;
+            margin-left: 10px;
+            padding: 3px;
+        }
+        .back a,.logout a{
+            text-decoration: none;
+            color: rgba(40, 69, 88, 0.943);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 3px;
+        }
+        .back,.logout{
+            border-radius: 5px;
+            background: whitesmoke;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        select{
+            font-size: 150%;
+            text-align: center;
+            padding: 10px;
+            margin: 15px;
+            width:320px ;
+            background-color: rgba(97, 89, 89, 0.379);
+        }
+        div{
+            margin-bottom: 10px;
+        }
+        table{
+            width: 100%;
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 10px;
+        }
+        th{
+            font-size: 20px;
+        }
+        th,td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .test{
+            font-size: 30px;
+        }
+        tbody tr:nth-child(even){
+            background-color: rgb(228, 136, 136);
+        }
+        td{
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+        <nav>
+            <img class="rvlogo" src="/rvlogo-dark.png" alt="">
+            <div class="back"><a href="<%=back%>">BACK</a></div>
+            <div class="logout"><a href="/logout">LOGOUT</a></div>
+        </nav>
+        <div class="container">
+        <%for(var i=0;i<4;i++){%> 
+            <table id="table">
+                <thead>
+                    <tr>
+                        <th class="head" colspan="3">Phase<%=i+1%></th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th class="coMapping">CO Mapping</th>
+                        <th class="maxMarks">Max Marks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="row1">
+                        <th>R1</th>
+                        <td><%=data[2+i*6]%></td>
+                        <td><%=data[26+i*6]%></td>
+                    </tr>
+                    <tr class="row2">
+                        <th>R2</th>
+                        <td><%=data[3+i*6]%></td>
+                        <td><%=data[27+i*6]%></td>
+                    </tr>
+                    <tr class="row3">
+                        <th>R3</th>
+                        <td><%=data[4+i*6]%></td>
+                        <td><%=data[28+i*6]%></td>
+                    </tr>
+                    <tr class="row4">
+                        <th>R4</th>
+                        <td><%=data[5+i*6]%></td>
+                        <td><%=data[29+i*6]%></td>
+                    </tr>
+                    <tr class="row5">
+                        <th>R5</th>
+                        <td><%=data[6+i*6]%></td>
+                        <td><%=data[30+i*6]%></td>
+                    </tr>
+                    <tr class="row6">
+                        <th>R6</th>
+                        <td><%=data[7+i*6]%></td>
+                        <td><%=data[31+i*6]%></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th></th>
+                    </tr>
+                </tfoot>
+            </table>
+             <%}%>
+            </div>
+</body>
+</html>

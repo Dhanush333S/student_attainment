@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        nav{
+            display: flex;
+            background-color: gray;
+            margin-bottom: 10px;
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+        .rvlogo{
+            height: 40px;
+            margin-left: 10px;
+            padding: 3px;
+        }
+        .back a,.logout a{
+            text-decoration: none;
+            color: rgba(40, 69, 88, 0.943);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 3px;
+        }
+        .back,.logout{
+            border-radius: 5px;
+            background: whitesmoke;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        table{
+            border: 2px solid black;
+            width:920px;
+            margin-top: 50px;
+            margin-left: 18%;
+            margin-bottom: 20px;
+        }
+        th{
+            padding: 10px;
+        }
+        input{
+            width: 200px;
+        }
+        thead{
+            font-size: 160%;
+        }
+        .head{
+            text-align: center;
+        }
+        thead th{
+            text-align: left;
+            padding-left: 25px;
+        }
+        tbody td{
+            padding-left: 79px;
+        }
+        .coMapping,.maxMarks{
+            padding-left: 106px;
+            text-decoration: underline;
+        }
+        .head{
+            border-bottom: 2px solid black;
+        }
+        tbody tr th{
+            width: 150px;
+        }
+        .row1,.row3,.row5{
+            border-collapse: collapse;
+            background-color: rgb(180, 189, 189);
+        }
+        .row1 td,.row3 td,.row5 td{
+            border: 2px solid rgb(180, 189, 189);
+        }
+        #finish{
+            display: flex;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 32px;
+            height: 40px;
+            width: 275px;
+            background-color:rgba(179, 168, 168, 0.528) ;
+            
+        }
+        #finish:hover{
+            background-color: rgb(179, 168, 168);
+        }
+    </style>
+</head>
+<body>
+        <nav>
+            <img class="rvlogo" src="/rvlogo.png" alt="">
+            <div class="back"><a href="/index">BACK</a></div>
+            <div class="logout"><a href="/logout">LOGOUT</a></div>
+        </nav>
+    <%if(!locals.time){%>
+        <center>
+            <form action="/assignment" method="post">
+                <label for="phase"><b>Number of Phases </b></label>
+                <input type="text" name="phase" id="phase" maxlength="1" autocomplete="off" onkeyup="this.value = this.value.replace(/[^0-4]/,'')">
+                <button type="submit">submit</button>
+            </form>
+        </center>
+        <%}%>
+    <form action="/assignment/upload" method="post">
+        <!-- <%for(var i=0;i<n;i++){%> -->
+        <table id="table">
+            <thead>
+                <tr>
+                    <th class="head" colspan="3">Phase<%=i+1%></th>
+                </tr>
+                <tr>
+                    <th></th>
+                    <th class="coMapping">CO Mapping</th>
+                    <th class="maxMarks">Max Marks</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="row1">
+                    <th>R1</th>
+                    <td><input type="text" name="r1<%=i+1%>" id="" value="0" autocomplete="off" onclick="this.value=''" maxlength="1" onkeyup="this.value = this.value.replace(/[^0-6]/,'')"></td>
+                    <td><input type="text" name="mr1<%=i+1%>" id="" value="0" autocomplete="off" onclick="this.value=''" onkeyup="this.value = this.value.replace(/[^0-9]/,'')"></td>
+                </tr>
+                <tr class="row2">
+                    <th>R2</th>
+                    <td><input type="text" name="r2<%=i+1%>" id="" value="0" autocomplete="off" onclick="this.value=''" maxlength="1" onkeyup="this.value = this.value.replace(/[^0-6]/,'')"></td>
+                    <td><input type="text" name="mr2<%=i+1%>" id="" value="0" autocomplete="off" onclick="this.value=''" onkeyup="this.value = this.value.replace(/[^0-9]/,'')"></td>
+                </tr>
+                <tr class="row3">
+                    <th>R3</th>
+                    <td><input type="text" name="r3<%=i+1%>" id="" value="0" autocomplete="off" onclick="this.value=''" maxlength="1" onkeyup="this.value = this.value.replace(/[^0-6]/,'')"></td>
+                    <td><input type="text" name="mr3<%=i+1%>" id="" value="0" autocomplete="off" onclick="this.value=''" onkeyup="this.value = this.value.replace(/[^0-9]/,'')"></td>
+                </tr>
+                <tr class="row4">
+                    <th>R4</th>
+                    <td><input type="text" name="r4<%=i+1%>" id="" value="0" autocomplete="off" onclick="this.value=''" maxlength="1" onkeyup="this.value = this.value.replace(/[^0-6]/,'')"></td>
+                    <td><input type="text" name="mr4<%=i+1%>" id="" value="0" autocomplete="off" onclick="this.value=''" onkeyup="this.value = this.value.replace(/[^0-9]/,'')"></td>
+                </tr>
+                <tr class="row5">
+                    <th>R5</th>
+                    <td><input type="text" name="r5<%=i+1%>" id="" value="0" autocomplete="off" onclick="this.value=''" maxlength="1" onkeyup="this.value = this.value.replace(/[^0-6]/,'')"></td>
+                    <td><input type="text" name="mr5<%=i+1%>" id="" value="0" autocomplete="off" onclick="this.value=''" onkeyup="this.value = this.value.replace(/[^0-9]/,'')"></td>
+                </tr>
+                <tr class="row6">
+                    <th>R6</th>
+                    <td><input type="text" name="r6<%=i+1%>" id="" value="0" autocomplete="off" onclick="this.value=''" maxlength="1" onkeyup="this.value = this.value.replace(/[^0-6]/,'')"></td>
+                    <td><input type="text" name="mr6<%=i+1%>" id="" value="0" autocomplete="off" onclick="this.value=''" onkeyup="this.value = this.value.replace(/[^0-9]/,'')"></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+        <!-- <%}%> -->
+        <div ><button id="finish" type="submit">Finish</button></div>
+    </form>
+</body>
+</html>

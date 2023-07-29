@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+      * {
+        border: 0px;
+        margin: 0px;
+      }
+      nav {
+        display: flex;
+        background-color: gray;
+        position: -webkit-sticky;
+        position: sticky;
+        overflow: hidden;
+        top: 0;
+      }
+      .rvlogo {
+        height: 40px;
+        margin-left: 10px;
+        padding: 3px;
+      }
+      .back a,
+      .logout a {
+        text-decoration: none;
+        color: rgba(40, 69, 88, 0.943);
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 3px;
+      }
+      .back,
+      .logout {
+        border-radius: 5px;
+        background: whitesmoke;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .heading {
+        background-color: rgb(0, 162, 255);
+        font-size: 30px;
+        text-decoration: underline;
+        padding: 5px;
+        margin: 18px;
+        width: 930px;
+        color: white;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-family: "Lucida Sans";
+      }
+      td {
+        width: 500px;
+      }
+      thead {
+        font-size: 30px;
+      }
+      thead th:first-child {
+        width: 290px;
+      }
+      td,
+      th {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      td {
+        font-size: 20px;
+        padding: 5px;
+        text-align: center;
+      }
+      tbody tr:nth-child(odd) {
+        background-color: #dddddd;
+      }
+      a {
+        text-decoration: none;
+      }
+      #menu{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+      }
+      .fa-chevron-up{
+        margin-bottom: 46px;
+      }
+      .fa-solid{
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <img class="rvlogo" src="/rvlogo-dark.png" alt="" />
+      <div class="back"><a href="/index">BACK</a></div>
+      <div class="logout"><a href="/logout">LOGOUT</a></div>
+    </nav>
+    <center>
+      <div class="heading"><%=title%></div>
+
+      <div>
+        <table id="data">
+          <thead>
+            <tr>
+              <th>USN</th>
+              <%if(co>0){%>
+              <th>CO1</th>
+              <%}%>
+              <%if(co>1){%>
+              <th>CO2</th>
+              <%}%>
+              <%if(co>2){%>
+              <th>CO3</th>
+              <%}%>
+              <%if(co>3){%>
+              <th>CO4</th>
+              <%}%>
+              <%if(co>4){%>
+              <th>CO5</th>
+              <%}%>
+              <%if(co>5){%>
+              <th>CO6</th>
+              <%}%>
+            </tr>
+          </thead>
+          <tbody>
+            <%for(var row of student){%>
+            <tr>
+              <td><%=row.usn%></td>
+              <%if(co>0) {%>
+              <td><%=row.co1p.toFixed(2)%></td>
+              <%}%>
+              <%if(co>1){%>
+              <td><%=row.co2p.toFixed(2)%></td>
+              <%}%>
+              <%if(co>2){%>
+              <td><%=row.co3p.toFixed(2)%></td>
+              <%}%>
+              <%if(co>3){%>
+              <td><%=row.co4p.toFixed(2)%></td>
+              <%}%>
+              <%if(co>4){%>
+              <td><%=row.co5p.toFixed(2)%></td>
+              <%}%>
+              <%if(co>5){%>
+              <td><%=row.co6p.toFixed(2)%></td>
+              <%}%>
+            </tr>
+            <% }%>
+            <tr>
+              <td>Total</td>
+              <%if(co>0){%>
+              <td id="crt"><%=total.co1p.toFixed(2)%></td>
+              <%}%>
+              <%if(co>1){%>
+              <td><%=total.co2p.toFixed(2)%></td>
+              <%}%>
+              <%if(co>2){%>
+              <td><%=total.co3p.toFixed(2)%></td>
+              <%}%>
+              <%if(co>3){%>
+              <td><%=total.co4p.toFixed(2)%></td>
+              <%}%>
+              <%if(co>4){%>
+              <td><%=total.co5p.toFixed(2)%></td>
+              <%}%>
+              <%if(co>5){%>
+              <td><%=total.co6p.toFixed(2)%></td>
+              <%}%>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </center>
+    <span id="menu">
+      <a class="fa-sharp fa-solid fa-chevron-up fa-2xl "></a>
+      <a class="fa-solid fa-download fa-2xl fa-fade" style="--fa-animation-duration: 3s;" onclick="export_data()"></a>
+    </span>
+    <script>
+      let crt=document.getElementById('crt');
+      if(Number(crt.innerHTML)==0.00)
+      window.location.reload();
+      console.log(Number(crt.innerHTML)==70.81)
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script>
+      function export_data(){
+        let data=document.getElementById('data');
+        var fp=XLSX.utils.table_to_book(data,{sheet:'sheet1'});
+        XLSX.write(fp,{
+          bookType:'xlsx',
+          type:'base64'
+        });
+        XLSX.writeFile(fp,'test.xlsx');
+      }
+    </script>
+  </body>
+</html>

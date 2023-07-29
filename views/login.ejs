@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            background-image: url(/background.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        form{
+            border: 1px solid black;
+            width: 480px;
+            position:absolute;
+            margin-left: 35%;
+            margin-top: 13%;
+            z-index: 1;
+        }
+        div{
+            padding-left: 10px;
+            padding-right: 10px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rgb(255, 255, 255);
+            background-color: black;
+            font-size: 28px;
+            position: relative;
+            height: 76px;
+        }
+        .heading{
+            display: flex;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+        }
+        input{
+            color:rgb(255, 255, 255);
+            background-color: rgba(176, 158, 158, 0.359);
+            padding: 5px;
+            height: 36px;
+            margin: 5px;
+        }
+        .submit{
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            height: 110px;
+        }
+        span{
+            padding: 10px;
+            font-size: 18px;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            height: 105px;
+        }
+        button{
+            color: white;
+            background-color: rgb(26, 157, 113);
+            margin-bottom: 10px;
+            height: 40px;
+            font-size: 28px;
+            font-family:'Times New Roman', Times, serif;
+        }
+        button:hover{
+            background-color: rgba(26, 157, 113, 0.516);
+        }
+        a{
+            color: white;
+        }
+        a:hover{
+            color: rgb(166, 207, 33);
+        }
+        .welcome{
+            display: flex;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.556);
+        }
+        .logout{
+            height: 30px;
+            background-color: rgba(34, 22, 22, 0.359);
+            display: flex;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+        }
+        .incorrect{
+            display: flex;
+            margin: auto;
+            align-items: center;
+            justify-content: center;
+            height: 30px;
+            background-color: rgba(34, 22, 22, 0.359);
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome"><h1>Welcome to Student Analyser!</h1></div>
+    <form action="/" method="post">
+        <%if(locals.logout){%>
+        <div class="logout">**Successfully Logged out**</div>
+        <%}%>
+        <div class="heading">Staff Login</div>
+        <div class="container">
+            <input type="text" placeholder="Username"name="username" id="username" required autocomplete="off">
+            <input type="password" placeholder="Password" name="password" id="password" required>
+        </div>
+        <div class="submit">
+            <span><a href="">Create an Account</a></span>
+            <button type="submit">Login</button>
+        </div>
+        <%if(locals.login){%>
+        <div class="incorrect">*Incorrect username or password</div>
+        <%}%>
+    </form>
+</body>
+</html>

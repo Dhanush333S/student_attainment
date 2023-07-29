@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            border: 0px;
+        }
+        nav{
+            display: flex;
+            background-color: gray;
+        }
+        .rvlogo{
+            height: 40px;
+            margin-left: 10px;
+            padding: 3px;
+        }
+        .back a,.logout a{
+            text-decoration: none;
+            color: rgba(40, 69, 88, 0.943);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 3px;
+        }
+        .back,.logout{
+            border-radius: 5px;
+            background: whitesmoke;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        body{
+            background-color: rgb(36, 184, 200);
+        }
+        #heading{
+            color: whitesmoke;
+            font-size: 40px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            padding: 80px 0px 80px 0px;
+        }
+        .container{
+            border: 1px solid black;
+            width: 400px;
+            background-color: whitesmoke;
+        }
+        .title{
+            background-color: rgb(222, 202, 24);
+            font-size: 25px;
+            padding: 3px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: whitesmoke;
+        }
+        .note{
+            padding-top: 20px;
+            padding-bottom: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        input {
+            border: 1px dashed black;
+            font-size: 17px;
+            padding: 20px;
+            margin-bottom: 10px;
+        }
+        button{
+            background-color: rgb(229, 211, 46);
+            margin-top: 10px;
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 100px;
+        }
+        button:hover{
+            background-color: rgb(184, 172, 61);
+            color: white;
+            cursor: pointer;
+        }
+        a{
+            color: rgb(36, 184, 200);
+            margin-bottom: 5px;
+        }
+        a:hover{
+            color: rgb(229, 211, 46);
+        }
+        div select{
+            border: 1px solid black;
+            margin-bottom: 6px;
+        }
+        .scheme{
+            border: 1px solid black;
+            height: 3px;
+            padding: 8px;
+            border-radius: 4px;
+            margin-left: auto;
+            margin-right: 10px ;
+            width: 100px;
+            font-size: 13px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <img class="rvlogo" src="/rvlogo-dark.png" alt="">
+            <div class="back"><a href="<%=back%>">BACK</a></div>
+            <div class="logout"><a href="/logout">LOGOUT</a></div>
+        </nav>
+    </header>
+    <center>
+        <form action="<%=url%>" method="post" enctype="multipart/form-data">
+            <div id="heading">
+                Upload File Here
+            </div>
+            <div class="container">
+                <div class="title">File Upload</div>
+                <div class="note">*Note: Upload only csv files</div>
+                <% if(locals.enter){%>
+                    <label>Enter Scheme : </label>
+                    <input name="scheme" class="scheme" id="scheme" type="text" value="2020" name="q1a" onclick="this.value=''">
+                    <% }%>
+                <% if(locals.lab){%>
+                    <div>Select Lab:
+                        <select name="lab" id="">
+                            <option value="<%=lab.one%>">non-lab</option>
+                            <option value="<%=lab.two%>">lab</option>
+                        </select>
+                    </div>
+                    <% }%>
+                <% if(locals.download){%>
+                <div><a href='<%=download%>' download>DOWNLOAD FORMAT</a></div>
+                <% }%>
+                <div>
+                    <center>
+                        <input type="file" id="img" name="img" accept=".csv">
+                    </center>
+                </div>
+                <div>
+                    <button type="submit">Upload</button>
+                </div>
+            </div>
+        </form>
+    </center>    
+</body>
+</html>

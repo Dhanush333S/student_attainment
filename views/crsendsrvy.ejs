@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      nav{
+            display: flex;
+            background-color: gray;
+            margin: 0px 10px 0px 10px;
+        }
+        .rvlogo{
+            height: 40px;
+            margin-left: 10px;
+            padding: 3px;
+        }
+        .back a,.logout a{
+            text-decoration: none;
+            color: rgba(40, 69, 88, 0.943);
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 3px;
+        }
+        .back,.logout{
+            border-radius: 5px;
+            background: whitesmoke;
+            margin: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        table{
+            width: 70%;
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin-bottom: 2px;
+        }
+        th{
+            font-size: 17px;
+        }
+        th,td{
+            border: 1px solid black;
+            padding: 10px;
+        }
+        .test{
+            font-size: 30px;
+        }
+        tbody tr:nth-child(even){
+            background-color: rgb(228, 136, 136);
+        }
+        table{
+          width:80%;
+          height: auto;
+        }
+        button{
+            width: 90px;
+            color: whitesmoke;
+            background-color: rgb(228, 136, 136);
+            cursor: pointer;
+            border: 1px solid black;
+            border-radius: 3px;
+            font-size: 23px;
+        }
+        button:hover{
+            background-color: rgb(151, 89, 89);
+            border: 1px solid whitesmoke;
+        }
+        input{
+            margin-left: 16%;
+            border: 1px solid black;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+  <header>
+    <nav>
+        <img class="rvlogo" src="/rvlogo-dark.png" alt="">
+        <div class="back"><a href="/index">BACK</a></div>
+        <div class="logout"><a href="/logout">LOGOUT</a></div>
+    </nav>
+  </header>
+    <form action = "" method="post">
+        <div align = "center">
+        <div>
+        <div align="center" style="font-size: 30px;text-decoration:underline;padding:2px">COURSE END SURVEY</div> 
+        <table>
+         <tr>
+            <th></th>
+            <th>EXCELLENT</th>
+            <th>VERY GOOD</th>
+            <th>GOOD</th>
+            <th>SATISFACTORY</th>
+            <th>POOR</th>
+            <th>CO</th>
+            </tr>
+          <tr>
+            <td>Q1</td>
+            <td><input name="q1e" type="text" value = "0" size = "10"  onclick="this.value=''"></input></td>
+            <td><input name="q1vg" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q1g" type="text" value = "0" size = "10"  onclick="this.value=''"></input></td>
+            <td><input name="q1s" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q1p" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q1co" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+          </tr>
+          <tr>
+            <td>Q2</td>
+            <td><input name="q2e" type="text" value = "0" size = "10"  onclick="this.value=''"></input></td>
+            <td><input name="q2vg" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q2g" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q2s" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q2p" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q2co" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+          </tr>
+          <tr>
+            <td>Q3</td>
+            <td><input name="q3e" type="text" value = "0" size = "10"  onclick="this.value=''"></input></td>
+            <td><input name="q3vg" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q3g" type="text" value = "0" size = "10"  onclick="this.value=''"></input></td>
+            <td><input name="q3s" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q3p" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q3co" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+          </tr>
+          <tr>
+            <td>Q4</td>
+            <td><input name="q4e" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q4vg" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q4g" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q4s" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q4p" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q4co" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+          </tr>
+          <tr>
+            <td>Q5</td>
+            <td><input name="q5e" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q5vg" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q5g" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q5s" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q5p" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q5co" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+         </tr>
+          <tr>
+            <td>Q6</td>
+            <td><input name="q6e" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q6vg" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q6g" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q6s" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q6p" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q6co" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+          </tr>
+          <tr>
+            <td>Q7</td>
+            <td><input name="q7e" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q7vg" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q7g" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q7s" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q7p" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q7co" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+          </tr>
+          <tr>
+            <td>Q8</td>
+            <td><input name="q8e" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q8vg" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q8g" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q8s" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q8p" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q8co" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+          </tr>
+          <tr>
+            <td>Q9</td>
+            <td><input name="q9e" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q9vg" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q9g" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q9s" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q9p" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q9co" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+          </tr>
+          <tr>
+            <td>Q10</td>
+            <td><input name="q10e" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q10vg" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q10g" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q10s" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q10p" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q10co" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+          </tr>
+          <tr>
+            <td>Q11</td>
+            <td><input name="q11e" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q11vg" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q11g" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q11s" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q11p" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q11co" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+          </tr>
+          <tr>
+            <td>Q12</td>
+            <td><input name="q12e" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q12vg" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q12g" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q12s" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q12p" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q12co" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+          </tr>
+          <tr>
+            <td>Q13</td>
+            <td><input name="q13e" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q13vg" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q13g" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q13s" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q13p" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q13co" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+          </tr>
+          <tr>
+            <td>Q14</td>
+            <td><input name="q14e" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q14vg" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q14g" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q14s" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q14p" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q14co" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+          </tr>
+          <tr>
+            <td>Q15</td>
+            <td><input name="q15e" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q15vg" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q15g" type="text" value = "0"  size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q15s" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q15p" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+            <td><input name="q15co" type="text" value = "0" size = "10" onclick="this.value=''"></input></td>
+          </tr>
+        </table>
+        <button type="submit">Submit</button>
+    </div>
+    </div>
+    </form>
+</body>
+</html>

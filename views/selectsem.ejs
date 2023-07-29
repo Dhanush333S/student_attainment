@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+            display: grid;
+            grid-template-columns:0.9fr 3fr 0.5fr 0.5fr;
+            grid-template-rows: 133px;
+        }
+        .item{
+            text-align: center;       
+         }
+        span{
+            padding: 0px;
+         }
+        .since{
+            padding-right: 0px;
+            margin-left: auto;
+        }
+        h1{
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            font-weight: 1000;
+        }
+        fieldset{
+            margin-top: 94px;
+            width: 617px;
+            height: 123px;
+            padding-bottom:0px ;
+            border: 2px solid black;
+            border-radius: 8px;
+        }
+        legend{
+            font: bold;
+            font-size: 150%;
+        }
+        select{
+            font-size: 150%;
+            text-align: center;
+            padding: 10px;
+            margin: 15px;
+            width:320px ;
+            background-color: rgba(97, 89, 89, 0.379);
+        }
+        input{
+            font-size: 150%;
+            text-align: center;
+            padding: 10px;
+            margin: 15px;
+            width:320px ;
+            background-color: rgba(97, 89, 89, 0.379);
+        }
+        .inside{
+            background-color: rgb(229, 191, 178);
+        }
+        button{
+            margin-top: 50px;
+            font-size: 30px;
+            width: 300px;
+            background-color: rgba(97, 89, 89, 0.379);
+        }
+        button:hover{
+            background-color: rgb(97, 89, 89);
+            color: white;
+            cursor: pointer;
+        }
+        .incorrect{
+            border: 3px dashed rgb(255, 124, 2);
+            background-color: rgb(0 238 238);
+            width: 240px;
+            padding: 5px;
+            margin-top: 5px;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="/rvlogo.png" alt="">
+        <div class="item">
+            <span style="font-size:17px">Rashtreeya Sikshana Samithi Trust</span><br>
+            <span style="font-size:29px"><a href="https://rvce.edu.in" target="_blank">R V College of Engineering </a></span><br><br>
+            <span style="font-size:18px">Autonomous Institution affiliated to Visvesvaraya Technological University, Belagavi</span><br><br>
+            <span style="font-size:18px">Approved By AICTE, New Delhi, Accredited By NBA, New Delhi</span>
+        </div>
+        <h1>Since 1963</h1>
+        <img class="since"src="https://rvce.edu.in/sites/all/themes/tb_rave/images/anniversary-logo.jpg" alt="">        
+    </header>
+    <center>
+        <form action="/selectsem" method="post">
+            <fieldset>
+                <legend>Select Semester</legend>
+                <div class="inside">
+                    <select name="sem" id="" required>                
+                        <option value="">--Select--</option>
+                        <option value="1">1st Semester</option>
+                        <option value="2">2nd Semester</option>
+                        <option value="3">3rd Semester</option>
+                        <option value="4">4th Semester</option>
+                        <option value="5">5th Semester</option>
+                        <option value="6">6th Semester</option>
+                        <option value="7">7th Semester</option>
+                        <option value="8">8th Semester</option>
+                    </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>
+                    <label for="crs">Course Code</label>
+                </legend>
+                <div class="inside">
+                    <input type="text" name="crs" id="crs" placeholder="Course Code" required>
+                </div>
+            </fieldset>
+            <button type="submit">Submit</button>
+            <% if(locals.login){%>
+                <div class="incorrect">
+                    **INCORRECT COURSE CODE
+                </div>
+            <% }%>
+        </form>
+     </center>
+</body>
+</html>

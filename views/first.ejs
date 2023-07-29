@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    header{
+            display: grid;
+            grid-template-columns:0.9fr 3fr 0.5fr 0.5fr;
+            grid-template-rows: 133px;
+        }
+    .rvlogo{
+        padding-left: 15%;
+        height: 138px;
+        width: 160px;
+    }
+    .item{
+        text-align: center;       
+     }
+    .since{
+        padding-left:90px ;
+    }
+    fieldset{
+        position: absolute;
+        margin-left: 37%;
+        margin-top: 6%;
+        border: 1px solid black;
+        width: 350px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 10px 10px 5px #aaaaaa;
+    }
+    legend{
+        display: flex;
+    }
+    .user{
+        width: 170px;
+        height: 170px;
+    }
+    .staff{
+        width: fit-content;
+        font-size: 35px;
+        font-family: serif;
+        position: absolute;
+        right: 78px;
+        top: -45px;
+    }
+    hr{
+        background-color: #aaaaaa;
+        width: 330px;
+    }
+    input{
+        border: 1px solid black;
+        font-size: 30px;
+        margin: 10px;
+        padding: 10px;
+    }
+    button{
+        margin: 10px;
+        font-size: 30px;
+        padding: 5px;
+        width: 150px;
+        float: right;
+    }
+    .error{
+        font-family:sans-serif;
+        padding: 20px;
+        border: 1px solid maroon;
+        background-color: pink;
+        border-radius: 8px;
+        margin: 3%;
+        margin-bottom: 10px;
+    }
+</style>
+<body>
+    <header>
+        <img src="/rvlogo.png" alt="" class="rvlogo">
+        <div class="item">
+            <span style="font-size:17px">Rashtreeya Sikshana Samithi Trust</span><br>
+            <span style="font-size:29px"><a href="https://rvce.edu.in" target="_blank">R V College of Engineering </a></span><br><br>
+            <span style="font-size:18px">Autonomous Institution affiliated to Visvesvaraya Technological University, Belagavi</span><br><br>
+            <span style="font-size:18px">Approved By AICTE, New Delhi, Accredited By NBA, New Delhi</span>
+        </div>
+        <h1>Since 1963</h1>
+        <img class="since" src="/rvPotraitLogo.jpg" alt="">        
+    </header>
+    <fieldset>
+        <legend>
+            <img src="/User.png" class="user">
+        </legend>
+        <div class="staff">STAFF ID</div>
+        <hr>
+            <form action="/first" method="post">
+                <input type="text" placeholder="Staff id" align="center" name="staff" required autocomplete="off">
+                <button type="submit" align="center">Submit</button>
+            </form>
+            <%if (locals.login){%>
+                <div class="error">
+                    NOTE* : INVALID STAFF ID
+                </div>
+             <% }%>
+        </fieldset>
+</body>
+</html>
